@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"; rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body{
+            background-color:rgb(45, 157, 172);
+            color: white;
+            font-family:Arial, Helvetica, sans-serif
+            
+        }
+
+        .calculator{
+            background-color: rgb(39, 136, 72);
+            align-items: center;
+            text-align: center;
+            border: 5px;
+            border-style: solid;
+            border-radius: 10px;
+            border-color: rgb(56, 117, 27);
+        }
+    </style>
+</head>
+<body>
+    <div class=" container mt-5">
+<h1 style="text-align: center;">BMI index calculator</h1>
+<br>
+<br>
+<br>
+
+        <div class="calculator">
+            <br>
+            <details ontoggle="message1()">
+                <summary>
+             <i id="ans">About</i>
+       
+        <br>
+        <br>
+
+        <img src="BMI1.jpg" style="width: 600px; height: 500px;">
+        <br>
+        <hr>
+
+        <h4>Weight in Kilogram:</h4>
+        <input type="number" class="form-control" placeholder="kgs" id="weight" style="border-radius: 10px;">
+        <br>
+        <hr>
+        <h4>Height in meters:</h4>
+        <input type="number" class="form-control" placeholder="m" id="height" style="border-radius: 10px;">
+        <br>
+        <hr>
+        <button type="button" class="btn btn-warning" onclick="answer()">Show results.....</button>
+        <br>
+        <br>
+        <h3 id="result" style="background-color: rgb(0, 78, 141); border-radius: 10px;">Your BMI will be show here :D</h3>
+
+
+
+    </div>
+    </div>
+    <script>
+
+        function message1(){
+            document.getElementById("ans").innerHTML= "BMI is used to determine whether or not your body weight is healthy or not. Type a value on the textboxes below to get your BMI.";
+        }
+
+        function answer(){
+            var weight = document.getElementById('weight').value;
+            var height = document.getElementById('height').value;
+            var bmi =  Math.round((weight / (height * height)) * 10) / 10;
+
+            if (bmi < 18.5){;
+        }
+
+        else if (bmi >= 18.5 && bmi <= 24.9){;
+            
+        }
+
+        else if (bmi >= 25 && bmi <= 29.9){;
+        }
+
+        else if (bmi > 30){;
+            
+        }
+           document.getElementById("result").innerHTML= "Your BMI is: " + bmi;
+               
+            }
+
+            
+        
+    </script>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <p style="text-align: center;">© Joaquin De la paz company. All rights reserved.</p>
+        
+
+</body>
+</html>
